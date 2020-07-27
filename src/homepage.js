@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import background1 from "./img1.jpeg";
+import background1 from "./head.jpg";
 import { Parallax } from "react-parallax";
 import YouTube from "react-youtube";
-import ChatBot from "react-simple-chatbot";
+import "./index.css";
+import Chatbott from "./chatbott";
 
 class HomePage extends React.Component {
   state = {
@@ -33,73 +34,69 @@ class HomePage extends React.Component {
       },
     };
 
-    const step1 = [
-      {
-        id: "1",
-        message: "What is your name?",
-        trigger: "2",
-      },
-      {
-        id: "2",
-        user: true,
-        trigger: "3",
-      },
-      {
-        id: "3",
-        message: "Hi {previousValue}, nice to meet you!",
-        user: true,
-      },
-
-      {
-        id: "4",
-        message: "What is your name?",
-        trigger: "2",
-      },
-      {
-        id: "5",
-        user: true,
-        trigger: "3",
-      },
-      {
-        id: "6",
-        message: "Hi {previousValue}, nice to meet you!",
-        end: true,
-      },
-    ];
     return (
       <div>
         <div class="parallax-container">
-          <Parallax bgImage={background1} bgImageAlt="the cat" strength={800}>
+          <Parallax bgImage={background1} bgImageAlt="the cat" strength={300}>
             <div style={{ height: "500px" }} />
           </Parallax>
         </div>
 
-        <section className="center">
-          <h1>Home is Where I'm Quarantined with You </h1>
-          <p>Keep calm and stay home with your cat</p>
-          <p>
-            staying at home remains the best way that you can protect yourself
-            and others
-          </p>
-          <div>npm install react-simple-chatbot --save</div>
-        </section>
-        <div className="center">
-          <YouTube videoId="1APwq1df6Mw" opts={opts} onReady={this._onReady} />
+        <div
+          class="center"
+          style={{ marginBottom: "20px", fontFamily: "Rowdies" }}
+        >
+          <h3>Welcome to Health and Safety chatbot!</h3>
+          <h4>We provide a quality health service to all the visitors</h4>
         </div>
+
         <div class="container">
-          <div class="row">
-            <div class="col s12 m4">
-              <div class="icon-block">
-                <h2 class="center brown-text">
-                  <i class="material-icons">flash_on</i>
+          <br></br>
+          <div
+            className="card-panel  cyan darken-2"
+            style={{
+              fontFamily: '"Comic Sans MS", cursive, sans-serif',
+            }}
+          >
+            <h5 className="center-align grey-text text-lighten-4">
+              Safety and health have become people's top concerns since COVID-19
+              outbreak.
+            </h5>
+            <h5
+              className="center-align grey-text text-lighten-4"
+              style={{
+                lineHeight: "35px",
+              }}
+            >
+              In order to meet the needs of users who want timely health
+              assistance, we created this chatbot so that users can find the
+              right digital health resources for user's needs.
+            </h5>
+          </div>
+          <div className="center">
+            <img
+              src={require("./robot.png")}
+              style={{
+                height: "200px",
+              }}
+            />
+          </div>
+          <h4 className="center cyan-text text-darken-2">
+            How to use the chatbot?
+          </h4>
+          <div className="row">
+            <div className="col s12 m4">
+              <div className="icon-block">
+                <h2 className="center brown-text">
+                  <i className="material-icons">forum</i>
                 </h2>
-                <h5 class="center">Speeds up development</h5>
+                <h5 className="center">
+                  Talk with the chatbot like with your friend
+                </h5>
 
-                <p class="light">
-                  We did most of the heavy lifting for you to provide a default
-                  stylings that incorporate our custom components. Additionally,
-                  we refined animations and transitions to provide a smoother
-                  experience for developers.
+                <p className="light">
+                  You can communicate with the chatbot in everyday language. It
+                  will care about you and greet you like an old friend.
                 </p>
               </div>
             </div>
@@ -107,16 +104,17 @@ class HomePage extends React.Component {
             <div class="col s12 m4">
               <div class="icon-block">
                 <h2 class="center brown-text">
-                  <i class="material-icons">group</i>
+                  <i class="material-icons">explore</i>
                 </h2>
-                <h5 class="center">User Experience Focused</h5>
+                <h5 class="center">
+                  Search the health news you need by the topic
+                </h5>
 
                 <p class="light">
-                  By utilizing elements and principles of Material Design, we
-                  were able to create a framework that incorporates components
-                  and animations that provide more feedback to users.
-                  Additionally, a single underlying responsive system across all
-                  platforms allow for a more unified user experience.
+                  You only need to enter the required topic in the chat box, and
+                  chatbot will return the corresponding news. Moreover, if you
+                  really don't know what to search, we also offer Daily
+                  headlines for you.
                 </p>
               </div>
             </div>
@@ -124,21 +122,23 @@ class HomePage extends React.Component {
             <div class="col s12 m4">
               <div class="icon-block">
                 <h2 class="center brown-text">
-                  <i class="material-icons">settings</i>
+                  <i class="material-icons">healing</i>
                 </h2>
-                <h5 class="center">Easy to work with</h5>
+                <h5 class="center">Let chatbot help you inquiry illness</h5>
 
                 <p class="light">
-                  We have provided detailed documentation as well as specific
-                  code examples to help new users get started. We are also
-                  always open to feedback and can answer any questions a user
-                  may have about Materialize.
+                  You can enter your symptoms to let chatbot inquiry your
+                  disease or choose your disease on the disease list. After
+                  that, the chatbot will return some professional advice to help
+                  you regain health.
                 </p>
               </div>
             </div>
           </div>
         </div>
-
+        <div className="center">
+          <YouTube videoId="1APwq1df6Mw" opts={opts} onReady={this._onReady} />
+        </div>
         {/* <div> {showChat ? <SimpleForm></SimpleForm> : null} </div> */}
 
         <div style={{ display: this.state.showChat ? "" : "none" }}>
@@ -146,7 +146,8 @@ class HomePage extends React.Component {
             style={{ position: "fixed", bottom: "40px", right: "10px" }}
             className="right"
           >
-            <ChatBot steps={step1} />
+            {/* <Chatbot /> */}
+            <Chatbott />
           </div>
         </div>
         <div className="right">
