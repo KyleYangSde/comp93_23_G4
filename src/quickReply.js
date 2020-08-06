@@ -1,5 +1,6 @@
 import React from "react";
 
+// handle each quick reply of the dialogueflow
 const QuickReply = (props) => {
   if (props.reply.payload) {
     return (

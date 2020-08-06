@@ -1,6 +1,7 @@
 import QuickReply from "./quickReply";
 import React, { Component } from "react";
 
+// handle QuickReplies
 class QuickReplies extends Component {
   constructor(props) {
     super(props);
