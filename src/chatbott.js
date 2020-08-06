@@ -4,6 +4,7 @@ import Message from "./message";
 import QuickReplies from "./quickReplies";
 import Card from "./card";
 
+// chatbot interface
 class Chatbott extends Component {
   messagesEnd;
   constructor(props) {
@@ -87,7 +88,7 @@ class Chatbott extends Component {
     this.setState({ session_id: res.data.session_id });
 
     const a = JSON.parse(res.data.answer.bot_api);
-
+    console.log("api", a);
     if (res.data.answer.contents.length === 0) {
       // fulfillment messages
       for (let msg of a.fulfillmentMessages) {
@@ -99,6 +100,7 @@ class Chatbott extends Component {
         this.setState({ messages: [...this.state.messages, says] });
       }
     } else {
+      console.log(1111111);
       var own = {
         text: {
           text: res.data.answer.reply,

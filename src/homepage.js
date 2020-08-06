@@ -6,6 +6,7 @@ import YouTube from "react-youtube";
 import "./index.css";
 import Chatbott from "./chatbott";
 
+// homepage interface
 class HomePage extends React.Component {
   state = {
     showChat: false,

@@ -1,0 +1,5 @@
+venv
+.idea
+bot.egg-info
+bot/__pycache__
+nohup.out

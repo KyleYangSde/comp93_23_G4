@@ -1,11 +1,13 @@
 import React from "react";
-
+import a from "./";
 class Message extends React.Component {
   constructor() {
     super();
   }
 
   render() {
+    const url = "https://api.adorable.io/avatars/46/key@adorable.io.png";
+
     console.log(this.props);
     return (
       <div className="col s12 m8 offset-m2 l6 offset-l3">
@@ -13,12 +15,7 @@ class Message extends React.Component {
           <div className="row valign-wrapper">
             {this.props.speaks === "jisoo" && (
               <div className="col s2">
-                <a
-                  href="/"
-                  className="btn-floating btn-large waves-effect waves-light red"
-                >
-                  {this.props.speaks}
-                </a>
+                <img src={url} className="circle" />
               </div>
             )}
             <div className="col s10">
@@ -27,7 +24,10 @@ class Message extends React.Component {
                 {this.props.addReply == undefined
                   ? ""
                   : this.props.addReply.map((each, index) => {
-                      if (each.content_type === "Label") {
+                      if (
+                        each.content_type === "Label" ||
+                        each.content_type === "Lable"
+                      ) {
                         return (
                           <div style={{ marginTop: "5px" }}>
                             <button
@@ -48,6 +48,10 @@ class Message extends React.Component {
                               {each.title}
                             </a>
                           </div>
+                        );
+                      } else if (each.content_type === "Text") {
+                        return (
+                          <div style={{ marginTop: "5px" }}>{each.content}</div>
                         );
                       }
                     })}
