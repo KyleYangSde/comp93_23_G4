@@ -151,7 +151,7 @@ class HomePage extends React.Component {
             <Chatbott />
           </div>
         </div>
-        <div className="right">
+        <div style={{ position: "fixed",bottom: "0px",right : "10px"}}>
           {!this.state.showChat ? (
             <button className="btn" onClick={() => this.startChat()}>
               click to chat...{" "}

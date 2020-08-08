@@ -3,6 +3,7 @@ import axios from "axios";
 import Message from "./message";
 import QuickReplies from "./quickReplies";
 import Card from "./card";
+import './glass.css';
 
 // chatbot interface
 class Chatbott extends Component {
@@ -221,22 +222,17 @@ class Chatbott extends Component {
 
   render() {
     return (
-      <div
-        style={{
-          minHeight: 500,
-          maxHeight: 500,
-          width: 400,
-          position: "absolute",
-          bottom: 0,
-          right: 0,
-          border: "1px solid lightgray",
-          backgroundColor: "grey",
-        }}
-      >
-        <nav>
-          <div className="nav-wrapper green">
+      <div className = "myglass">
+        <nav style={{
+          backgroundColor : "inherent",
+          borderRadius: "20px 20px 0 0"
+        }}>
+          <div className="nav-wrapper  teal lighten-1"  
+           style ={{
+            borderRadius: "18px 18px 0 0"
+           }}>
             <center>
-              <a href="/" className="">
+              <a href="/" className="" style={{ fontFamily: "Rowdies", fontSize : "20px"}}>
                 Talk with Jisoo
               </a>
             </center>
@@ -261,8 +257,8 @@ class Chatbott extends Component {
             style={{ float: "left", clear: "both" }}
           ></div>
         </div>
-        <div className=" col s12">
-          <input
+        <div className=" teal lighten-1 col s12">
+          <input className = "input"
             style={{
               margin: 0,
               paddingLeft: "1%",

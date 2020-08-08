@@ -1,12 +1,13 @@
 import React from "react";
 import a from "./";
+import url from"./doctor.jpg";
 class Message extends React.Component {
   constructor() {
     super();
   }
 
   render() {
-    const url = "https://api.adorable.io/avatars/46/key@adorable.io.png";
+    
 
     console.log(this.props);
     return (
@@ -14,8 +15,8 @@ class Message extends React.Component {
         <div className="card-panel grey lighten-5 z-depth-1">
           <div className="row valign-wrapper">
             {this.props.speaks === "jisoo" && (
-              <div className="col s2">
-                <img src={url} className="circle" />
+              <div style={{left:"10px"}}>
+                <img src={url} className="circle z-depth-2" height="60px"/>
               </div>
             )}
             <div className="col s10">
