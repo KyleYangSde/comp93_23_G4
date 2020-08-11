@@ -1,8 +1,10 @@
 Following the steps below run the app,
 1. npm install
+
 Install each packages dependency of package.json file.
 
 2. npm start
+
 run the app
 
 
